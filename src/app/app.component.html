@@ -79,7 +79,7 @@
                     #searchInput
                     [ngModel]="searchText"
                     (ngModelChange)="changeSearchText(searchInput.value)" >
-                    <input type="button" value="搜尋" id="searchbutton">
+                    <input type="button" value="搜尋" id="searchbutton" *ngIf="searchText">
                   </div>
               </div>
             </div>
