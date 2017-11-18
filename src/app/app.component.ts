@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-root',
@@ -75,6 +76,27 @@ export class AppComponent {
   changeSearchText(searchInput) {
     console.log(searchInput);
     this.searchText = searchInput;
+  }
+
+  removeArticle($event){
+    /* 方法一
+    for(let i = this.articles.length -1 ; i >= 0; i--){
+        let article = this.articles[i];
+        if(article.id == $event){
+          this.articles.splice(i, 1);
+        }
+
+    }*/
+
+    /* 方法二
+    this.articles = this.articles.filter((item)=>{
+      return item.id !== $event;
+
+    })*/
+
+    //方法三
+    this.articles = this.articles.filter(item=>item.id !== $event);
+    
   }
 
   /*changeSearchText($event) {
