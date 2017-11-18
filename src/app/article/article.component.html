@@ -4,8 +4,8 @@
           <a [href]="data.href">{{data.title}}</a>
       </h2>
       <div class="post-info clearfix">
-        <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>{{data.date}}</span>
-        <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">{{data.author}}</a></span>
+        <span class="post-date"><i class="glyphicon glyphicon-calendar"></i>{{data.date |date:'yyyy-MM-dd'}}</span>
+        <span class="post-author"><i class="glyphicon glyphicon-user"></i><a href="http://blog.miniasp.com/author/will.aspx">{{data.author|uppercase}}</a></span>
         <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a href="http://blog.miniasp.com/category/Visual-Studio.aspx">{{data.category}}</a></span>
       </div>
     </header>
@@ -13,3 +13,5 @@
     </section>
     <button (click)="remove()" >刪除</button>
   </article>
+
+  <pre>{{ data | json }}</pre>
